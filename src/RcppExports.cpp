@@ -10,14 +10,98 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// mean_rcpp
-double mean_rcpp(Rcpp::NumericVector x);
-RcppExport SEXP _Rcpp2doParallel_mean_rcpp(SEXP xSEXP) {
+// MCG_Clayton_cpp
+double MCG_Clayton_cpp(Rcpp::NumericVector x);
+RcppExport SEXP _Rcpp2doParallel_MCG_Clayton_cpp(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(mean_rcpp(x));
+    rcpp_result_gen = Rcpp::wrap(MCG_Clayton_cpp(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+
+// MCG_Gumbel_cpp
+double MCG_Gumbel_cpp(Rcpp::NumericVector x);
+RcppExport SEXP _Rcpp2doParallel_MCG_Gumbel_cpp(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(MCG_Gumbel_cpp(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+
+// MCG_Frank_cpp
+double MCG_Frank_cpp(Rcpp::NumericVector x);
+RcppExport SEXP _Rcpp2doParallel_MCG_Frank_cpp(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(MCG_Frank_cpp(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+
+// MCG_cpp
+double MCG_cpp(Rcpp::NumericVector x);
+RcppExport SEXP _Rcpp2doParallel_MCG_cpp(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(MCG_cpp(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+
+// sort_by
+double sort_by(Rcpp::NumericVector x);
+RcppExport SEXP _Rcpp2doParallel_sort_by(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(sort_by(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+
+// SC_update_cpp
+double SC_update_cpp(Rcpp::NumericVector x);
+RcppExport SEXP _Rcpp2doParallel_SC_update_cpp(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(SC_update_cpp(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+
+// SC_update_cpp
+double SC_copula_cpp(Rcpp::NumericVector x);
+RcppExport SEXP _Rcpp2doParallel_SC_copula_cpp(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(SC_copula_cpp(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+
+// SC_update_cpp
+double RMST_cpp(Rcpp::NumericVector x);
+RcppExport SEXP _Rcpp2doParallel_RMST_cpp(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(RMST_cpp(x));
     return rcpp_result_gen;
 END_RCPP
 }
