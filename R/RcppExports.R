@@ -5,3 +5,34 @@ mean_rcpp <- function(x) {
     .Call(`_Rcpp2doParallel_mean_rcpp`, x)
 }
 
+MCG_Clayton_cpp <- function(x) {
+    .Call(`_Rcpp2doParallel_MCG_Clayton_cpp`, x)
+}
+
+MCG_Gumbel_cpp <- function(x) {
+    .Call(`_Rcpp2doParallel_MCG_Gumbel_cpp`, x)
+}
+
+MCG_Frank_cpp <- function(x) {
+    .Call(`_Rcpp2doParallel_MCG_Frank_cpp`, x)
+}
+
+MCG_cpp <- function(x) {
+    .Call(`_Rcpp2doParallel_MCG_cpp`, x)
+}
+
+sort_by <- function(x) {
+    .Call(`_Rcpp2doParallel_sort_by`, x)
+}
+
+SC_update_cpp <- function(x) {
+    .Call(`_Rcpp2doParallel_SC_update_cpp`, x)
+}
+
+SC_copula_cpp <- function(x) {
+    .Call(`_Rcpp2doParallel_SC_copula_cpp`, x)
+}
+
+RMST_cpp <- function(x) {
+    .Call(`_Rcpp2doParallel_RMST_cpp`, x)
+}
