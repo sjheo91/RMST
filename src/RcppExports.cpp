@@ -23,9 +23,37 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// MCG_Gumbel_cpp
+Rcpp::DataFrame MCG_Gumbel_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, double theta);
+RcppExport SEXP _Rcpp2doParallel_MCG_Gumbel_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
+  BEGIN_RCPP
+  Rcpp::RObject rcpp_result_gen;
+  Rcpp::RNGScope rcpp_rngScope_gen;
+  Rcpp::traits::input_parameter< Rcpp::NumericVector >::type time(timeSEXP);
+  Rcpp::traits::input_parameter< Rcpp::NumericVector >::type status(statusSEXP);
+  Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
+  rcpp_result_gen = Rcpp::wrap(MCG_Gumbel_cpp(time, status, theta));
+  return rcpp_result_gen;
+  END_RCPP
+}
+// MCG_Frank_cpp
+Rcpp::DataFrame MCG_Frank_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, double theta);
+RcppExport SEXP _Rcpp2doParallel_MCG_Frank_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
+  BEGIN_RCPP
+  Rcpp::RObject rcpp_result_gen;
+  Rcpp::RNGScope rcpp_rngScope_gen;
+  Rcpp::traits::input_parameter< Rcpp::NumericVector >::type time(timeSEXP);
+  Rcpp::traits::input_parameter< Rcpp::NumericVector >::type status(statusSEXP);
+  Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
+  rcpp_result_gen = Rcpp::wrap(MCG_Frank_cpp(time, status, theta));
+  return rcpp_result_gen;
+  END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_Rcpp2doParallel_MCG_Clayton_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Clayton_cpp, 3},
+    {"_Rcpp2doParallel_MCG_Gumbel_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Gumbel_cpp, 3},
+    {"_Rcpp2doParallel_MCG_Frank_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Frank_cpp, 3},
     {NULL, NULL, 0}
 };
 
