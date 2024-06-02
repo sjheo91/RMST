@@ -80,38 +80,6 @@ BEGIN_RCPP
 END_RCPP
 }
 
-// RMST_cpp
-double RMST_cpp(DataFrame data, String method, double tau, double theta, int family);
-RcppExport SEXP _Rcpp2doParallel_RMST_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP thetaSEXP, SEXP familySEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::DataFrame >::type data(dataSEXP);
-    Rcpp::traits::input_parameter< String >::type method(methodSEXP);
-    Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
-    Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
-    Rcpp::traits::input_parameter< int >::type family(familySEXP);
-    
-    rcpp_result_gen = Rcpp::wrap(RMST_cpp(data, method, tau, theta, family));
-    return rcpp_result_gen;
-END_RCPP
-}
-
-// RMST_ENS_cpp
-double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight);
-RcppExport SEXP _Rcpp2doParallel_RMST_ENS_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP weightSECP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::DataFrame >::type data(dataSEXP);
-    Rcpp::traits::input_parameter< String >::type method(methodSEXP);
-    Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type weight(weightSECP);
-    
-    rcpp_result_gen = Rcpp::wrap(RMST_ENS_cpp(data, method, tau, weight));
-    return rcpp_result_gen;
-END_RCPP
-}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_Rcpp2doParallel_MCG_Clayton_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Clayton_cpp, 3},
@@ -119,8 +87,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_Rcpp2doParallel_MCG_Frank_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Frank_cpp, 3},
     {"_Rcpp2doParallel_MCG_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_cpp, 4},
     {"_Rcpp2doParallel_sort_by", (DL_FUNC) &_Rcpp2doParallel_sort_by, 2},
-    {"_Rcpp2doParallel_RMST_cpp", (DL_FUNC) &_Rcpp2doParallel_RMST_cpp, 5},
-    {"_Rcpp2doParallel_RMST_ENS_cpp", (DL_FUNC) &_Rcpp2doParallel_RMST_ENS_cpp, 4},
     {NULL, NULL, 0}
 };
 
