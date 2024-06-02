@@ -67,15 +67,15 @@ RMST_comparison <- function(data, tau, k_tau, family=NULL, method='indep', alpha
     rmst0 <- rmst_res0$rmst
     rmst.var0 <- rmst_res0$rmst.var
   }else if(method!='indep'&ensemble==F){
-    rmst1 <- RMST_cpp(data=dat1, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family)
-    rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family)
-    rmst0 <- RMST_cpp(data=dat0, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family)
-    rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family)
+    rmst1 <- RMST_cpp(data=dat1, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol)
+    rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol)
+    rmst0 <- RMST_cpp(data=dat0, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol)
+    rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol)
   }else if(method!='indep'&ensemble==T){
-    rmst1 <- RMST_ENS_cpp(data=dat1, tau=tau, method=method, weight=weight)
-    rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, ensemble=T, weight=weight)
-    rmst0 <- RMST_ENS_cpp(data=dat0, tau=tau, method=method, weight=weight)
-    rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, ensemble=T, weight=weight)
+    rmst1 <- RMST_ENS_cpp(data=dat1, tau=tau, method=method, weight=weight, tol=tol)
+    rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, ensemble=T, weight=weight, tol=tol)
+    rmst0 <- RMST_ENS_cpp(data=dat0, tau=tau, method=method, weight=weight, tol=tol)
+    rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, ensemble=T, weight=weight, tol=tol)
   }else{
     stop('Check method')
   }
