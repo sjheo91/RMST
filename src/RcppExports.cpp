@@ -17,7 +17,7 @@ BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(mean_rcpp(x));
+    rcpp_result_gen = Rcpp::wrap(MCG_Clayton_cpp(x));
     return rcpp_result_gen;
 END_RCPP
 }
