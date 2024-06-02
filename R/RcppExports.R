@@ -2,37 +2,37 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 #' @export
 MCG_Clayton_cpp <- function(time, status, theta) {
-    .Call(`_Rcpp2doParallel_MCG_Clayton_cpp`, time, status, theta)
+    .Call(`_RMSTdepC_MCG_Clayton_cpp`, time, status, theta)
 }
 
 MCG_Gumbel_cpp <- function(time, status, theta) {
-    .Call(`_Rcpp2doParallel_MCG_Gumbel_cpp`, time, status, theta)
+    .Call(`_RMSTdepC_MCG_Gumbel_cpp`, time, status, theta)
 }
 
 MCG_Frank_cpp <- function(time, status, theta) {
-    .Call(`_Rcpp2doParallel_MCG_Frank_cpp`, time, status, theta)
+    .Call(`_RMSTdepC_MCG_Frank_cpp`, time, status, theta)
 }
 
 MCG_cpp <- function(time, status, theta, family) {
-    .Call(`_Rcpp2doParallel_MCG_cpp`, time, status, theta, family)
+    .Call(`_RMSTdepC_MCG_cpp`, time, status, theta, family)
 }
 
 sort_by <- function(x, y) {
-    .Call(`_Rcpp2doParallel_sort_by`, x, y)
+    .Call(`_RMSTdepC_sort_by`, x, y)
 }
 
 SC_update_cpp <- function(time, status, Sx, Sy, family, theta, tol) {
-  .Call(`_Rcpp2doParallel_SC_update_cpp`, time, status, Sx, Sy, family, theta, tol)
+  .Call(`_RMSTdepC_SC_update_cpp`, time, status, Sx, Sy, family, theta, tol)
 }
 
 SC_copula_cpp <- function(time, status, family, theta, tol) {
-  .Call(`_Rcpp2doParallel_SC_copula_cpp`, time, status, family, theta, tol)
+  .Call(`_RMSTdepC_SC_copula_cpp`, time, status, family, theta, tol)
 }
 
 RMST_cpp <- function(data, method, tau, theta, family, tol) {
-    .Call(`_Rcpp2doParallel_RMST_cpp`, data, method, tau, theta, family, tol)
+    .Call(`_RMSTdepC_RMST_cpp`, data, method, tau, theta, family, tol)
 }
 
 RMST_ENS_cpp <- function(data, method, tau, theta, family, tol) {
-    .Call(`_Rcpp2doParallel_RMST_ENS_cpp`, data, method, tau, weight, tol)
+    .Call(`_RMSTdepC_RMST_ENS_cpp`, data, method, tau, weight, tol)
 }
