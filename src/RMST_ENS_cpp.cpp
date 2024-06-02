@@ -1,10 +1,10 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-Function RMST_cpp( "RMST_cpp" ) ; 
-
 // [[Rcpp::export]]
 NumericVector RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight) {
+
+  Function RMST_cpp( "RMST_cpp" ) ; 
   
   NumericVector rmst = rep(0.0, 3);
   NumericVector rmst0;
