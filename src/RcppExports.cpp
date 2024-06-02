@@ -11,7 +11,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // MCG_Clayton_cpp
-double MCG_Clayton_cpp(NumericVector time, NumericVector status, double theta);
+DataFrame MCG_Clayton_cpp(NumericVector time, NumericVector status, double theta);
 RcppExport SEXP _Rcpp2doParallel_MCG_Clayton_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -25,7 +25,7 @@ END_RCPP
 }
 
 // MCG_Gumbel_cpp
-double MCG_Gumbel_cpp(NumericVector time, NumericVector status, double theta);
+DataFrame MCG_Gumbel_cpp(NumericVector time, NumericVector status, double theta);
 RcppExport SEXP _Rcpp2doParallel_MCG_Gumbel_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -39,7 +39,7 @@ END_RCPP
 }
 
 // MCG_Frank_cpp
-double MCG_Frank_cpp(NumericVector time, NumericVector status, double theta);
+DataFrame MCG_Frank_cpp(NumericVector time, NumericVector status, double theta);
 RcppExport SEXP _Rcpp2doParallel_MCG_Frank_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -53,7 +53,7 @@ END_RCPP
 }
 
 // MCG_cpp
-double MCG_cpp(NumericVector time, NumericVector status, double theta, int family);
+DataFrame MCG_cpp(NumericVector time, NumericVector status, double theta, int family);
 RcppExport SEXP _Rcpp2doParallel_MCG_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP, SEXP familySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -68,7 +68,7 @@ END_RCPP
 }
 
 // sort_by
-double sort_by(NumericVector x, NumericVector y);
+NumericVector sort_by(NumericVector x, NumericVector y);
 RcppExport SEXP _Rcpp2doParallel_sort_by(SEXP xSEXP, SEXP ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -81,7 +81,7 @@ END_RCPP
 }
 
 // SC_update_cpp
-double SC_update_cpp(NumericVector time, NumericVector status, NumericVector Sx, NumericVector Sy, int family, double theta, double tol);
+NumericVector SC_update_cpp(NumericVector time, NumericVector status, NumericVector Sx, NumericVector Sy, int family, double theta, double tol);
 RcppExport SEXP _Rcpp2doParallel_SC_update_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP SxSEXP, SEXP SySEXP, SEXP familySEXP, SEXP thetaSEXP, SEXP tolSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -99,8 +99,8 @@ BEGIN_RCPP
 END_RCPP
 }
 
-// SC_update_cpp
-double SC_copula_cpp(NumericVector time, NumericVector status, int family, double theta, double tol);
+// SC_copula_cpp
+DataFrame SC_copula_cpp(NumericVector time, NumericVector status, int family, double theta, double tol);
 RcppExport SEXP _Rcpp2doParallel_SC_copula_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP familySEXP, SEXP thetaSEXP, SEXP tolSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
