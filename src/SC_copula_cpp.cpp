@@ -1,6 +1,8 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+Function SC_update_cpp( "SC_update_cpp" ) ; 
+
 // [[Rcpp::export]]
 DataFrame SC_copula_cpp(NumericVector time, NumericVector status, double theta, int family, double tol=1e-6) {
   
