@@ -1,6 +1,8 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+Function RMST_cpp( "RMST_cpp" ) ; 
+
 // [[Rcpp::export]]
 double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight) {
   
