@@ -21,7 +21,7 @@ RMST_var <- function(data, method, tau, theta, family,
   
   # Compute estimates
   estimates <- foreach::foreach(i = iterators::icount(n_boots), # Perform n simulations
-                                .combine = "c",           # Combine results
+                                .combine = "rbind",           # Combine results
                                 # Self-load
                                 .packages = "Rcpp2doParallel") %dopar% {
                                   boot_data = data[sample(1:nrow(data), replace=T),]
