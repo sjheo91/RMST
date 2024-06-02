@@ -7,9 +7,9 @@ Function RMST_cpp( "RMST_cpp" ) ;
 double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight) {
   
   NumericVector rmst = rep(0.0, 3);
-  double rmst0
-  double rmst1
-  double rmst2
+  double rmst0;
+  double rmst1;
+  double rmst2;
   
   if(method=="MCG"){
     rmst0 = RMST_cpp(data, method, tau, 2/3, 3);
