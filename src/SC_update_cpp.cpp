@@ -2,8 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-NumericVector SC_update_cpp(NumericVector time, NumericVector status, 
-                            NumericVector Sx, NumericVector Sy, int family, double theta, double tol) {
+NumericVector SC_update_cpp(NumericVector time, NumericVector status, NumericVector Sx, NumericVector Sy, int family, double theta, double tol) {
   
   int n = time.length();
   NumericVector Sx_old = Sx * 1.0;
