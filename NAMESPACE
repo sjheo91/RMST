@@ -2,6 +2,7 @@
 
 export(mean_parallel_compute)
 export(RMST_var)
+export(MCG_cpp)
 importFrom(Rcpp,sourceCpp)
 importFrom(doParallel,registerDoParallel)
 importFrom(foreach,"%dopar%")
