@@ -152,9 +152,9 @@ RcppExport SEXP _RMSTdepC_RMST_var_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauS
   Rcpp::traits::input_parameter< Rcpp::DataFrame >::type data(dataSEXP);
   Rcpp::traits::input_parameter< String >::type method(methodSEXP);
   Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
-    Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
+  Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
   Rcpp::traits::input_parameter< int >::type family(familySECP);
-    Rcpp::traits::input_parameter< int >::type n_boot(n_bootSEXP);
+  Rcpp::traits::input_parameter< int >::type n_boot(n_bootSEXP);
   Rcpp::traits::input_parameter< bool >::type ensemble(ensembleSECP);
   Rcpp::traits::input_parameter< NumericVector >::type weight(weightSECP);
   Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
