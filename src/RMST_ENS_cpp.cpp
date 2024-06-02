@@ -9,9 +9,9 @@ double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector wei
   NumericVector rmst = rep(0.0, 3);
   
   if(method=="MCG"){
-    rmst[0] = RMST_cpp(data, method, tau, 2/3, 3);
-    rmst[1] = RMST_cpp(data, method, tau, 2, 3);
-    rmst[2] = RMST_cpp(data, method, tau, 6, 3);
+    double rmst0 = RMST_cpp(data, method, tau, 2/3, 3);
+    double rmst1 = RMST_cpp(data, method, tau, 2, 3);
+    double rmst2 = RMST_cpp(data, method, tau, 6, 3);
   }else{
     stop("Check method");
   }
