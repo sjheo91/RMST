@@ -13,6 +13,10 @@ MCG_Frank_cpp <- function(time, status, theta) {
     .Call(`_Rcpp2doParallel_MCG_Frank_cpp`, time, status, theta, family)
 }
 
+MCG_cpp <- function(time, status, theta) {
+    .Call(`_Rcpp2doParallel_MCG_cpp`, time, status, theta, family)
+}
+
 sort_by <- function(x, y) {
     .Call(`_Rcpp2doParallel_sort_by`, x, y)
 }
