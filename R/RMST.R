@@ -8,7 +8,7 @@
 #' @importFrom iterators icount
 #' @importFrom doParallel registerDoParallel
 
-RMST_var_cpp <- function(data, method, tau, theta, family=NULL, ensemble=FALSE, weight=c(1,1,1), tol=1e-6,
+RMST_var <- function(data, method, tau, theta, family=NULL, ensemble=FALSE, weight=c(1,1,1), tol=1e-6,
                      n_boots = 999,
                      n_cores = parallel::detectCores()) {
   
@@ -56,7 +56,7 @@ RMST_indep <- function(data, tau){
   return(list(rmst=rmst, rmst.var=rmst.var))
 }
 
-RMST_comparison <- function(data, tau, k_tau, family=NULL, method='indep', alpha=0.05, ensemble=F, weight=c(1,1,1), tol=1e-6, 
+RMST_comparison <- function(data, tau, k_tau, family=NULL, method='indep', alpha=0.05, ensemble=F, weight=c(1,1,1), tol=1e-6, parallel=F,
                             n_boots = 999, n_cores = parallel::detectCores()){
   
   dat1 <- data %>% filter(trt==1)
@@ -71,14 +71,28 @@ RMST_comparison <- function(data, tau, k_tau, family=NULL, method='indep', alpha
     rmst.var0 <- rmst_res0$rmst.var
   }else if(method!='indep'&ensemble==F){
     rmst1 <- RMST_cpp(data=dat1, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol)
-    rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol, n_boots=n_boots, n_cores=n_cores)
     rmst0 <- RMST_cpp(data=dat0, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol)
-    rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol, n_boots=n_boots, n_cores=n_cores)
+
+    if(parallel){
+      rmst.var1 <- RMST_var(data=dat1, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol, n_boots=n_boots, n_cores=n_cores)
+      rmst.var0 <- RMST_var(data=dat0, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol, n_boots=n_boots, n_cores=n_cores)
+    }else{
+      rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol)
+      rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol)
+    }
+      
   }else if(method!='indep'&ensemble==T){
     rmst1 <- RMST_ENS_cpp(data=dat1, tau=tau, method=method, weight=weight, tol=tol)
-    rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots, n_cores=n_cores)
     rmst0 <- RMST_ENS_cpp(data=dat0, tau=tau, method=method, weight=weight, tol=tol)
-    rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots, n_cores=n_cores)
+    
+    if(parallel){
+    rmst.var1 <- RMST_var(data=dat1, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots, n_cores=n_cores)
+    rmst.var0 <- RMST_var(data=dat0, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots, n_cores=n_cores)
+    }else{
+    rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, ensemble=T, weight=weight, tol=tol)
+    rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, ensemble=T, weight=weight, tol=tol)
+    }
+
   }else{
     stop('Check method')
   }
