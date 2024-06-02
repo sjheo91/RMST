@@ -10,7 +10,7 @@ double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector wei
   NumericVector rmst_2 = rep(0.0, 1);
   NumericVector rmst_3 = rep(0.0, 1);
   
-  if(method=="MCG"){
+  if(method=="MCG"|method=="SC"){
     rmst_1 = RMST_cpp(data, method, tau, 2/3, 3, tol);
     rmst_2 = RMST_cpp(data, method, tau, 2, 3, tol);
     rmst_3 = RMST_cpp(data, method, tau, 6, 3, tol);
