@@ -10,10 +10,10 @@ MCG_Gumbel_cpp <- function(time, status, theta) {
 }
 
 MCG_Frank_cpp <- function(time, status, theta) {
-    .Call(`_Rcpp2doParallel_MCG_Frank_cpp`, time, status, theta, family)
+    .Call(`_Rcpp2doParallel_MCG_Frank_cpp`, time, status, theta)
 }
 
-MCG_cpp <- function(time, status, theta) {
+MCG_cpp <- function(time, status, theta, family) {
     .Call(`_Rcpp2doParallel_MCG_cpp`, time, status, theta, family)
 }
 
