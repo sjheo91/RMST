@@ -89,8 +89,8 @@ RMST_comparison <- function(data, tau, k_tau, family=NULL, method='indep', alpha
     rmst.var1 <- RMST_var(data=dat1, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots, n_cores=n_cores)
     rmst.var0 <- RMST_var(data=dat0, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots, n_cores=n_cores)
     }else{
-    rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, ensemble=T, weight=weight, tol=tol)
-    rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, ensemble=T, weight=weight, tol=tol)
+    rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots)
+    rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots)
     }
 
   }else{
