@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-NumericVector RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight) {
+NumericVector RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight, double tol) {
 
   Function RMST_cpp( "RMST_cpp" ) ; 
   
@@ -12,9 +12,9 @@ NumericVector RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVec
   NumericVector rmst2;
   
   if(method=="MCG"){
-    rmst0 = RMST_cpp(data, method, tau, 2/3, 3);
-    rmst1 = RMST_cpp(data, method, tau, 2, 3);
-    rmst2 = RMST_cpp(data, method, tau, 6, 3);
+    rmst0 = RMST_cpp(data, method, tau, 2/3, 3, tol);
+    rmst1 = RMST_cpp(data, method, tau, 2, 3, tol);
+    rmst2 = RMST_cpp(data, method, tau, 6, 3, tol);
   }else{
     stop("Check method");
   }
