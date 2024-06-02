@@ -111,8 +111,8 @@ RcppExport SEXP _Rcpp2doParallel_SC_copula_cpp(SEXP timeSEXP, SEXP statusSEXP, S
   END_RCPP
 }
 // RMST_cpp
-double RMST_cpp(DataFrame data, String method, double tau, double theta, int family);
-RcppExport SEXP _Rcpp2doParallel_RMST_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP thetaSEXP, SEXP familySEXP) {
+double RMST_cpp(DataFrame data, String method, double tau, double theta, int family, double tol);
+RcppExport SEXP _Rcpp2doParallel_RMST_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP thetaSEXP, SEXP familySEXP, SEXP tolSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
@@ -121,14 +121,15 @@ RcppExport SEXP _Rcpp2doParallel_RMST_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP t
   Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
   Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
   Rcpp::traits::input_parameter< int >::type family(familySEXP);
-  
-  rcpp_result_gen = Rcpp::wrap(RMST_cpp(data, method, tau, theta, family));
+  Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+    
+  rcpp_result_gen = Rcpp::wrap(RMST_cpp(data, method, tau, theta, family, tol));
   return rcpp_result_gen;
   END_RCPP
 }
 // RMST_ENS_cpp
-double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight);
-RcppExport SEXP _Rcpp2doParallel_RMST_ENS_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP weightSECP) {
+double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight, double tol);
+RcppExport SEXP _Rcpp2doParallel_RMST_ENS_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP weightSECP, SEXP tolSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
@@ -136,8 +137,9 @@ RcppExport SEXP _Rcpp2doParallel_RMST_ENS_cpp(SEXP dataSEXP, SEXP methodSEXP, SE
   Rcpp::traits::input_parameter< String >::type method(methodSEXP);
   Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
   Rcpp::traits::input_parameter< NumericVector >::type weight(weightSECP);
-  
-  rcpp_result_gen = Rcpp::wrap(RMST_ENS_cpp(data, method, tau, weight));
+  Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+    
+  rcpp_result_gen = Rcpp::wrap(RMST_ENS_cpp(data, method, tau, weight, tol));
   return rcpp_result_gen;
   END_RCPP
 }
