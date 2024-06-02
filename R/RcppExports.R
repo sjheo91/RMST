@@ -37,6 +37,6 @@ RMST_ENS_cpp <- function(data, method, tau, weight, tol) {
     .Call(`_RMSTdepC_RMST_ENS_cpp`, data, method, tau, weight, tol)
 }
 
-RMST_var_cpp <- function(data, method, tau, weight, tol) {
-    .Call(`_RMSTdepC_RMST_var_cpp`, data, method, tau, weight, tol)
+RMST_var_cpp <- function(data, method, tau, theta, family, n_boot, ensemble, weight, tol) {
+    .Call(`_RMSTdepC_RMST_var_cpp`, data, method, tau, theta, family, n_boot, ensemble, weight, tol)
 }
