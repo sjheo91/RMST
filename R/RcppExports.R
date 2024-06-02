@@ -17,13 +17,13 @@ sort_by <- function(x, y) {
     .Call(`_Rcpp2doParallel_sort_by`, x, y)
 }
 #' @export
-SC_update_cpp <- function(time, status, Sx, Sy, family, theta, tol) {
-  .Call(`_Rcpp2doParallel_SC_update_cpp`, time, status, Sx, Sy, family, theta, tol)
-}
+#SC_update_cpp <- function(time, status, Sx, Sy, family, theta, tol) {
+#  .Call(`_Rcpp2doParallel_SC_update_cpp`, time, status, Sx, Sy, family, theta, tol)
+#}
 #' @export
-SC_copula_cpp <- function(time, status, family, theta, tol) {
-  .Call(`_Rcpp2doParallel_SC_copula_cpp`, time, status, family, theta, tol)
-}
+#SC_copula_cpp <- function(time, status, family, theta, tol) {
+#  .Call(`_Rcpp2doParallel_SC_copula_cpp`, time, status, family, theta, tol)
+#}
 #' @export
 RMST_cpp <- function(data, method, tau, theta, family) {
     .Call(`_Rcpp2doParallel_RMST_cpp`, data, method, tau, theta, family)
