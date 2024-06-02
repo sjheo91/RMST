@@ -2,6 +2,7 @@
 export(MCG_Clayton_cpp)
 export(MCG_Gumbel_cpp)
 export(MCG_Frank_cpp)
+export(MCG_cpp)
 export(sort_by)
 export(SC_update_cpp)
 export(SC_copula_cpp)
