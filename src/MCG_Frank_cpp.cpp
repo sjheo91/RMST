@@ -1,3 +1,6 @@
+#include <Rcpp.h>
+using namespace Rcpp;
+
 // [[Rcpp::export]]
 DataFrame MCG_Frank_cpp(NumericVector time, NumericVector status, double theta) {
   
