@@ -48,7 +48,7 @@ mean_parallel_compute = function(time, status, theta,
                                                              # Self-load
                                .packages = "Rcpp2doParallel") %dopar% {
     
-    result = MCG_Clayton_cpp(random_data) # or use Rcpp2doParallel::mean_rcpp()
+    result = MCG_Clayton_cpp(time, status, theta) # or use Rcpp2doParallel::mean_rcpp()
 
     result
   }
