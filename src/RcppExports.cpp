@@ -61,12 +61,37 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type time(timeSEXP);
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type status(statusSEXP);
     Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
-    Rcpp::traits::input_parameter< int >::type theta(familySEXP);
+    Rcpp::traits::input_parameter< int >::type family(familySEXP);
     rcpp_result_gen = Rcpp::wrap(MCG_cpp(time, status, theta, family));
     return rcpp_result_gen;
 END_RCPP
 }
 
+// sort_by
+double sort_by(NumericVector x, NumericVector y);
+RcppExport SEXP _Rcpp2doParallel_sort_by(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type y(tSEXP);
+    rcpp_result_gen = Rcpp::wrap(sort_by(time, status, theta, family));
+    return rcpp_result_gen;
+END_RCPP
+}
+
+// SC_update_cpp
+double SC_update_cpp(NumericVector x, NumericVector y);
+RcppExport SEXP _Rcpp2doParallel_SC_update_cpp(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type y(tSEXP);
+    rcpp_result_gen = Rcpp::wrap(SC_update_cpp(time, status, theta, family));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_Rcpp2doParallel_MCG_Clayton_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Clayton_cpp, 3},
