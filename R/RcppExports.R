@@ -4,31 +4,31 @@
 MCG_Clayton_cpp <- function(time, status, theta) {
     .Call(`_Rcpp2doParallel_MCG_Clayton_cpp`, time, status, theta)
 }
-#' @export
-MCG_Gumbel_cpp <- function(time, status, theta) {
-    .Call(`_Rcpp2doParallel_MCG_Gumbel_cpp`, time, status, theta)
-}
-#' @export
-MCG_Frank_cpp <- function(time, status, theta) {
-    .Call(`_Rcpp2doParallel_MCG_Frank_cpp`, time, status, theta, family)
-}
-#' @export
-sort_by <- function(x, y) {
-    .Call(`_Rcpp2doParallel_sort_by`, x, y)
-}
-#' @export
+
+#MCG_Gumbel_cpp <- function(time, status, theta) {
+#    .Call(`_Rcpp2doParallel_MCG_Gumbel_cpp`, time, status, theta)
+#}
+
+#MCG_Frank_cpp <- function(time, status, theta) {
+#    .Call(`_Rcpp2doParallel_MCG_Frank_cpp`, time, status, theta, family)
+#}
+
+#sort_by <- function(x, y) {
+#    .Call(`_Rcpp2doParallel_sort_by`, x, y)
+#}
+
 #SC_update_cpp <- function(time, status, Sx, Sy, family, theta, tol) {
 #  .Call(`_Rcpp2doParallel_SC_update_cpp`, time, status, Sx, Sy, family, theta, tol)
 #}
-#' @export
+
 #SC_copula_cpp <- function(time, status, family, theta, tol) {
 #  .Call(`_Rcpp2doParallel_SC_copula_cpp`, time, status, family, theta, tol)
 #}
-#' @export
+
 #RMST_cpp <- function(data, method, tau, theta, family) {
 #    .Call(`_Rcpp2doParallel_RMST_cpp`, data, method, tau, theta, family)
 #}
-#' @export
+
 #RMST_ENS_cpp <- function(data, method, tau, theta, family) {
 #    .Call(`_Rcpp2doParallel_RMST_ENS_cpp`, data, method, tau, weight)
 #}
