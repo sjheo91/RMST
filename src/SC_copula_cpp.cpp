@@ -1,11 +1,11 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-Function SC_update_cpp( "SC_update_cpp" ) ; 
-
 // [[Rcpp::export]]
 DataFrame SC_copula_cpp(NumericVector time, NumericVector status, int family, double theta, double tol) {
-  
+
+  Function SC_update_cpp( "SC_update_cpp" ) ; 
+
   int n = time.length();
   
   NumericVector Se = Rcpp::rep(0.1, n);
