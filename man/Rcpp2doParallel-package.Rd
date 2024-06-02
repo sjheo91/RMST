@@ -11,14 +11,12 @@ Provides an example implementation using a package to house both a C++ function 
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/coatless-rd-rcpp/rcpp-and-doparallel}
-  \item \url{https://rd-rcpp.thecoatlessprofessor.com/rcpp-and-doparallel/}
-  \item Report bugs at \url{https://github.com/coatless-rd-rcpp/rcpp-and-doparallel/issues}
+  \item \url{https://github.com/sjheo91/RMSTdepC}
 }
 
 }
 \author{
-\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu}
+\strong{Maintainer}: Seok-Jae Heo \email{sjheo@yuhs.ac}
 
 }
 \keyword{internal}
