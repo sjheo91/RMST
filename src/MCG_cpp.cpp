@@ -1,6 +1,10 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+Function MCG_Clayton_cpp( "MCG_Clayton_cpp" ) ; 
+Function MCG_Gumbel_cpp( "MCG_Gumbel_cpp" ) ; 
+Function MCG_Frank_cpp( "MCG_Frank_cpp" ) ; 
+
 // [[Rcpp::export]]
 DataFrame MCG_cpp(NumericVector time, NumericVector status, double theta, int family) {
   
