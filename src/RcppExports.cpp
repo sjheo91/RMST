@@ -107,7 +107,14 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_Rcpp2doParallel_mean_rcpp", (DL_FUNC) &_Rcpp2doParallel_mean_rcpp, 1},
+    {"_Rcpp2doParallel_MCG_Clayton_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Clayton_cpp, 1},
+{"_Rcpp2doParallel_MCG_Gumbel_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Gumbel_cpp, 1},
+{"_Rcpp2doParallel_MCG_Frank_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Frank_cpp, 1},
+{"_Rcpp2doParallel_MCG_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_cpp, 1},
+{"_Rcpp2doParallel_sort_by", (DL_FUNC) &_Rcpp2doParallel_sort_by, 1},
+{"_Rcpp2doParallel_SC_update_cpp", (DL_FUNC) &_Rcpp2doParallel_SC_update_cpp, 1},
+{"_Rcpp2doParallel_SC_copula_cpp", (DL_FUNC) &_Rcpp2doParallel_SC_copula_cpp, 1},
+{"_Rcpp2doParallel_RMST_cpp", (DL_FUNC) &_Rcpp2doParallel_RMST_cpp, 1},
     {NULL, NULL, 0}
 };
 
