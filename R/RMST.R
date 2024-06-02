@@ -26,7 +26,7 @@ RMST_var_cpp <- function(data, method, tau, theta, family, ensemble=FALSE, weigh
                                 .combine = "c",
                                 .packages = "RMSTdepC") %dopar% {
     boot_data = data[sample(1:nrow(data), replace=T),]
-    if(ensemble){
+    if(ensemble==FALSE){
       result = RMST_cpp(boot_data, method, tau, theta, family, tol);
     }else{
       result = RMST_ENS_cpp(boot_data, method, tau, weight, tol);
