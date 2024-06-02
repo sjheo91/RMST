@@ -28,7 +28,7 @@
 #' # Compute the mean on 1000 observations with 50 replications across
 #' # 2 CPUs.
 #' mean_parallel_compute(1000, n_sim = 50, n_cores = 2)
-mean_parallel_compute = function(n, mean = 0, sd = 1,
+mean_parallel_compute = function(time, status, theta,
                                  n_sim = 1000,
                                  n_cores = parallel::detectCores()) {
 
@@ -47,9 +47,8 @@ mean_parallel_compute = function(n, mean = 0, sd = 1,
                                .combine = "rbind",           # Combine results
                                                              # Self-load
                                .packages = "Rcpp2doParallel") %dopar% {
-    random_data = rnorm(n, mean, sd)
-
-    result = mean_rcpp(random_data) # or use Rcpp2doParallel::mean_rcpp()
+    
+    result = MCG_Clayton_cpp(random_data) # or use Rcpp2doParallel::mean_rcpp()
 
     result
   }
