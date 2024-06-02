@@ -2,6 +2,7 @@
 using namespace Rcpp;
 
 Function MCG_cpp( "MCG_cpp" ) ; 
+Function SC_copula_cpp( "SC_update_cpp" ) ; 
 Function SC_copula_cpp( "SC_copula_cpp" ) ; 
 Function sort_by( "sort_by" ) ; 
 
