@@ -94,7 +94,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
     Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
     
-    rcpp_result_gen = Rcpp::wrap(SC_update_cpp(time, status, theta, Sx, Sy, family, theta, tol));
+    rcpp_result_gen = Rcpp::wrap(SC_update_cpp(time, status, Sx, Sy, family, theta, tol));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -111,7 +111,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
     Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
     
-    rcpp_result_gen = Rcpp::wrap(SC_copula_cpp(time, status, theta, family, theta, tol));
+    rcpp_result_gen = Rcpp::wrap(SC_copula_cpp(time, status, family, theta, tol));
     return rcpp_result_gen;
 END_RCPP
 }
