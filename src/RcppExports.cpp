@@ -10,20 +10,20 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// MCG_Clayton_cpp
-double MCG_Clayton_cpp(Rcpp::NumericVector x);
-RcppExport SEXP _Rcpp2doParallel_MCG_Clayton_cpp(SEXP xSEXP) {
+// mean_rcpp
+double mean_rcpp(Rcpp::NumericVector x);
+RcppExport SEXP _Rcpp2doParallel_mean_rcpp(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(MCG_Clayton_cpp(x));
+    rcpp_result_gen = Rcpp::wrap(mean_rcpp(x));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_Rcpp2doParallel_MCG_Clayton_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Clayton_cpp, 1},
+    {"_Rcpp2doParallel_mean_rcpp", (DL_FUNC) &_Rcpp2doParallel_mean_rcpp, 1},
     {NULL, NULL, 0}
 };
 
