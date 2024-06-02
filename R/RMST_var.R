@@ -5,7 +5,7 @@
 #' @importFrom doParallel registerDoParallel
 #' @importFrom stats rnorm
 
-RMST_var <- function(data, method, tau, theta, family,
+RMST_var <- function(data, method, tau, theta, family, tol=1e-6,
                      n_boots = 1000,
                      n_cores = parallel::detectCores()) {
   
@@ -25,7 +25,7 @@ RMST_var <- function(data, method, tau, theta, family,
                                 # Self-load
                                 .packages = "Rcpp2doParallel") %dopar% {
                                   boot_data = data[sample(1:nrow(data), replace=T),]
-                                  result = RMST_cpp(boot_data, method, tau, theta, family);
+                                  result = RMST_cpp(boot_data, method, tau, theta, family, tol);
                                   result
                                 }
   
