@@ -4,12 +4,12 @@ using namespace Rcpp;
 Function RMST_cpp( "RMST_cpp" ) ; 
 
 // [[Rcpp::export]]
-double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight) {
+NumericVector RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight) {
   
   NumericVector rmst = rep(0.0, 3);
-  double rmst0;
-  double rmst1;
-  double rmst2;
+  NumericVector rmst0;
+  NumericVector rmst1;
+  NumericVector rmst2;
   
   if(method=="MCG"){
     rmst0 = RMST_cpp(data, method, tau, 2/3, 3);
