@@ -33,6 +33,6 @@ RMST_cpp <- function(data, method, tau, theta, family, tol) {
     .Call(`_RMSTdepC_RMST_cpp`, data, method, tau, theta, family, tol)
 }
 
-RMST_ENS_cpp <- function(data, method, tau, theta, family, tol) {
+RMST_ENS_cpp <- function(data, method, tau, weight, tol) {
     .Call(`_RMSTdepC_RMST_ENS_cpp`, data, method, tau, weight, tol)
 }
