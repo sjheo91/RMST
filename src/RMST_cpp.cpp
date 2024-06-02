@@ -33,5 +33,5 @@ double RMST_cpp(DataFrame data, String method, double tau, double theta, int fam
   s_sub.insert(s_sub.begin(), 1);
   
   rmst = sum(diff(t_sub)*s_sub);
-  return rmst;
+  return Rcpp::wrap(rmst);
 }
