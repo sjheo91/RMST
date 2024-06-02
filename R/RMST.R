@@ -22,7 +22,7 @@ RMST_var_cpp <- function(data, method, tau, theta, family, ensemble=FALSE, weigh
   # Compute estimates
   output <- foreach::foreach(i = iterators::icount(n_boots), # Perform n simulations
                                 .combine = "rbind",
-                                .packages = "Rcpp2doParallel") %dopar% {
+                                .packages = "RMSTdepC") %dopar% {
     boot_data = data[sample(1:nrow(data), replace=T),]
     if(ensemble){
       result = RMST_cpp(boot_data, method, tau, theta, family, tol);
