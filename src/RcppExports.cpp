@@ -99,6 +99,23 @@ BEGIN_RCPP
 END_RCPP
 }
 
+// SC_copula_cpp
+DataFrame SC_copula_cpp(NumericVector time, NumericVector status, int family, double theta, double tol);
+RcppExport SEXP _Rcpp2doParallel_SC_copula_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP familySEXP, SEXP thetaSEXP, SEXP tolSEXP) {
+  BEGIN_RCPP
+  Rcpp::RObject rcpp_result_gen;
+  Rcpp::RNGScope rcpp_rngScope_gen;
+  Rcpp::traits::input_parameter< Rcpp::NumericVector >::type time(timeSEXP);
+  Rcpp::traits::input_parameter< Rcpp::NumericVector >::type status(statusSEXP);
+  Rcpp::traits::input_parameter< int >::type family(familySEXP);
+  Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
+  Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+  
+  rcpp_result_gen = Rcpp::wrap(SC_copula_cpp(time, status, family, theta, tol));
+  return rcpp_result_gen;
+  END_RCPP
+}
+
 // RMST_cpp
 double RMST_cpp(DataFrame data, String method, double tau, double theta, int family);
 RcppExport SEXP _Rcpp2doParallel_RMST_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP thetaSEXP, SEXP familySEXP) {
@@ -139,7 +156,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_Rcpp2doParallel_MCG_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_cpp, 4},
     {"_Rcpp2doParallel_sort_by", (DL_FUNC) &_Rcpp2doParallel_sort_by, 2},
     {"_Rcpp2doParallel_SC_update_cpp", (DL_FUNC) &_Rcpp2doParallel_SC_update_cpp, 7},
-
+    {"_Rcpp2doParallel_SC_copula_cpp", (DL_FUNC) &_Rcpp2doParallel_SC_copula_cpp, 5},
     {"_Rcpp2doParallel_RMST_cpp", (DL_FUNC) &_Rcpp2doParallel_RMST_cpp, 5},
     {"_Rcpp2doParallel_RMST_ENS_cpp", (DL_FUNC) &_Rcpp2doParallel_RMST_ENS_cpp, 4},
     {NULL, NULL, 0}
