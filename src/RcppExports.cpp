@@ -152,8 +152,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_Rcpp2doParallel_sort_by", (DL_FUNC) &_Rcpp2doParallel_sort_by, 2},
     {"_Rcpp2doParallel_SC_update_cpp", (DL_FUNC) &_Rcpp2doParallel_SC_update_cpp, 7},
     {"_Rcpp2doParallel_SC_copula_cpp", (DL_FUNC) &_Rcpp2doParallel_SC_copula_cpp, 5},
-    {"_Rcpp2doParallel_RMST_cpp", (DL_FUNC) &_Rcpp2doParallel_RMST_cpp, 5},
-    {"_Rcpp2doParallel_RMST_ENS_cpp", (DL_FUNC) &_Rcpp2doParallel_RMST_ENS_cpp, 4},
+    {"_Rcpp2doParallel_RMST_cpp", (DL_FUNC) &_Rcpp2doParallel_RMST_cpp, 6},
+    {"_Rcpp2doParallel_RMST_ENS_cpp", (DL_FUNC) &_Rcpp2doParallel_RMST_ENS_cpp, 5},
     {NULL, NULL, 0}
 };
 
