@@ -11,7 +11,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // MCG_Clayton_cpp
-DataFrame MCG_Clayton_cpp(NumericVector time, NumericVector status, double theta);
+Rcpp::DataFrame MCG_Clayton_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, double theta);
 RcppExport SEXP _Rcpp2doParallel_MCG_Clayton_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -25,7 +25,7 @@ END_RCPP
 }
 
 // MCG_Gumbel_cpp
-DataFrame MCG_Gumbel_cpp(NumericVector time, NumericVector status, double theta);
+Rcpp::DataFrame MCG_Gumbel_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, double theta);
 RcppExport SEXP _Rcpp2doParallel_MCG_Gumbel_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -39,7 +39,7 @@ END_RCPP
 }
 
 // MCG_Frank_cpp
-DataFrame MCG_Frank_cpp(NumericVector time, NumericVector status, double theta);
+Rcpp::DataFrame MCG_Frank_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, double theta);
 RcppExport SEXP _Rcpp2doParallel_MCG_Frank_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -53,7 +53,7 @@ END_RCPP
 }
 
 // MCG_cpp
-DataFrame MCG_cpp(NumericVector time, NumericVector status, double theta, int family);
+Rcpp::DataFrame MCG_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, double theta, int family);
 RcppExport SEXP _Rcpp2doParallel_MCG_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP, SEXP familySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -68,7 +68,7 @@ END_RCPP
 }
 
 // sort_by
-NumericVector sort_by(NumericVector x, NumericVector y);
+Rcpp::NumericVector sort_by(Rcpp::NumericVector x, Rcpp::NumericVector y);
 RcppExport SEXP _Rcpp2doParallel_sort_by(SEXP xSEXP, SEXP ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
