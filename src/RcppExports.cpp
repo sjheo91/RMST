@@ -12,7 +12,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // mean_rcpp
 double MCG_Clayton_cpp(NumericVector time, NumericVector status, double theta);
-RcppExport SEXP _Rcpp2doParallel_MCG_Clayton_cpp(SEXP xSEXP) {
+RcppExport SEXP _Rcpp2doParallel_MCG_Clayton_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
