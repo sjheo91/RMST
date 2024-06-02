@@ -12,20 +12,20 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // MCG_Clayton_cpp
 Rcpp::DataFrame MCG_Clayton_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, double theta);
-RcppExport SEXP _Rcpp2doParallel_MCG_Clayton_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type time(timeSEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type status(statusSEXP);
-    Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
-    rcpp_result_gen = Rcpp::wrap(MCG_Clayton_cpp(time, status, theta));
-    return rcpp_result_gen;
-END_RCPP
+RcppExport SEXP _RMSTdepC_MCG_Clayton_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
+  BEGIN_RCPP
+  Rcpp::RObject rcpp_result_gen;
+  Rcpp::RNGScope rcpp_rngScope_gen;
+  Rcpp::traits::input_parameter< Rcpp::NumericVector >::type time(timeSEXP);
+  Rcpp::traits::input_parameter< Rcpp::NumericVector >::type status(statusSEXP);
+  Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
+  rcpp_result_gen = Rcpp::wrap(MCG_Clayton_cpp(time, status, theta));
+  return rcpp_result_gen;
+  END_RCPP
 }
 // MCG_Gumbel_cpp
 Rcpp::DataFrame MCG_Gumbel_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, double theta);
-RcppExport SEXP _Rcpp2doParallel_MCG_Gumbel_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
+RcppExport SEXP _RMSTdepC_MCG_Gumbel_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
@@ -38,7 +38,7 @@ RcppExport SEXP _Rcpp2doParallel_MCG_Gumbel_cpp(SEXP timeSEXP, SEXP statusSEXP, 
 }
 // MCG_Frank_cpp
 Rcpp::DataFrame MCG_Frank_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, double theta);
-RcppExport SEXP _Rcpp2doParallel_MCG_Frank_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
+RcppExport SEXP _RMSTdepC_MCG_Frank_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
@@ -52,7 +52,7 @@ RcppExport SEXP _Rcpp2doParallel_MCG_Frank_cpp(SEXP timeSEXP, SEXP statusSEXP, S
 
 // MCG_cpp
 Rcpp::DataFrame MCG_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, double theta, int family);
-RcppExport SEXP _Rcpp2doParallel_MCG_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP, SEXP familySEXP) {
+RcppExport SEXP _RMSTdepC_MCG_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP, SEXP familySEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
@@ -66,7 +66,7 @@ RcppExport SEXP _Rcpp2doParallel_MCG_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP th
 }
 // sort_by
 Rcpp::NumericVector sort_by(Rcpp::NumericVector x, Rcpp::NumericVector y);
-RcppExport SEXP _Rcpp2doParallel_sort_by(SEXP xSEXP, SEXP ySEXP) {
+RcppExport SEXP _RMSTdepC_sort_by(SEXP xSEXP, SEXP ySEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
@@ -78,7 +78,7 @@ RcppExport SEXP _Rcpp2doParallel_sort_by(SEXP xSEXP, SEXP ySEXP) {
 }
 // SC_update_cpp
 NumericVector SC_update_cpp(NumericVector time, NumericVector status, NumericVector Sx, NumericVector Sy, int family, double theta, double tol);
-RcppExport SEXP _Rcpp2doParallel_SC_update_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP SxSEXP, SEXP SySEXP, SEXP familySEXP, SEXP thetaSEXP, SEXP tolSEXP) {
+RcppExport SEXP _RMSTdepC_SC_update_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP SxSEXP, SEXP SySEXP, SEXP familySEXP, SEXP thetaSEXP, SEXP tolSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
@@ -96,7 +96,7 @@ RcppExport SEXP _Rcpp2doParallel_SC_update_cpp(SEXP timeSEXP, SEXP statusSEXP, S
 }
 // SC_copula_cpp
 DataFrame SC_copula_cpp(NumericVector time, NumericVector status, int family, double theta, double tol);
-RcppExport SEXP _Rcpp2doParallel_SC_copula_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP familySEXP, SEXP thetaSEXP, SEXP tolSEXP) {
+RcppExport SEXP _RMSTdepC_SC_copula_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP familySEXP, SEXP thetaSEXP, SEXP tolSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
@@ -112,7 +112,7 @@ RcppExport SEXP _Rcpp2doParallel_SC_copula_cpp(SEXP timeSEXP, SEXP statusSEXP, S
 }
 // RMST_cpp
 double RMST_cpp(DataFrame data, String method, double tau, double theta, int family, double tol);
-RcppExport SEXP _Rcpp2doParallel_RMST_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP thetaSEXP, SEXP familySEXP, SEXP tolSEXP) {
+RcppExport SEXP _RMSTdepC_RMST_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP thetaSEXP, SEXP familySEXP, SEXP tolSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
@@ -122,14 +122,14 @@ RcppExport SEXP _Rcpp2doParallel_RMST_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP t
   Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
   Rcpp::traits::input_parameter< int >::type family(familySEXP);
   Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
-    
+  
   rcpp_result_gen = Rcpp::wrap(RMST_cpp(data, method, tau, theta, family, tol));
   return rcpp_result_gen;
   END_RCPP
 }
 // RMST_ENS_cpp
 double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight, double tol);
-RcppExport SEXP _Rcpp2doParallel_RMST_ENS_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP weightSECP, SEXP tolSEXP) {
+RcppExport SEXP _RMSTdepC_RMST_ENS_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP weightSECP, SEXP tolSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
@@ -138,26 +138,26 @@ RcppExport SEXP _Rcpp2doParallel_RMST_ENS_cpp(SEXP dataSEXP, SEXP methodSEXP, SE
   Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
   Rcpp::traits::input_parameter< NumericVector >::type weight(weightSECP);
   Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
-    
+  
   rcpp_result_gen = Rcpp::wrap(RMST_ENS_cpp(data, method, tau, weight, tol));
   return rcpp_result_gen;
   END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_Rcpp2doParallel_MCG_Clayton_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Clayton_cpp, 3},
-    {"_Rcpp2doParallel_MCG_Gumbel_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Gumbel_cpp, 3},
-    {"_Rcpp2doParallel_MCG_Frank_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Frank_cpp, 3},
-    {"_Rcpp2doParallel_MCG_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_cpp, 4},
-    {"_Rcpp2doParallel_sort_by", (DL_FUNC) &_Rcpp2doParallel_sort_by, 2},
-    {"_Rcpp2doParallel_SC_update_cpp", (DL_FUNC) &_Rcpp2doParallel_SC_update_cpp, 7},
-    {"_Rcpp2doParallel_SC_copula_cpp", (DL_FUNC) &_Rcpp2doParallel_SC_copula_cpp, 5},
-    {"_Rcpp2doParallel_RMST_cpp", (DL_FUNC) &_Rcpp2doParallel_RMST_cpp, 6},
-    {"_Rcpp2doParallel_RMST_ENS_cpp", (DL_FUNC) &_Rcpp2doParallel_RMST_ENS_cpp, 5},
-    {NULL, NULL, 0}
+  {"_RMSTdepC_MCG_Clayton_cpp", (DL_FUNC) &_RMSTdepC_MCG_Clayton_cpp, 3},
+  {"_RMSTdepC_MCG_Gumbel_cpp", (DL_FUNC) &_RMSTdepC_MCG_Gumbel_cpp, 3},
+  {"_RMSTdepC_MCG_Frank_cpp", (DL_FUNC) &_RMSTdepC_MCG_Frank_cpp, 3},
+  {"_RMSTdepC_MCG_cpp", (DL_FUNC) &_RMSTdepC_MCG_cpp, 4},
+  {"_RMSTdepC_sort_by", (DL_FUNC) &_RMSTdepC_sort_by, 2},
+  {"_RMSTdepC_SC_update_cpp", (DL_FUNC) &_RMSTdepC_SC_update_cpp, 7},
+  {"_RMSTdepC_SC_copula_cpp", (DL_FUNC) &_RMSTdepC_SC_copula_cpp, 5},
+  {"_RMSTdepC_RMST_cpp", (DL_FUNC) &_RMSTdepC_RMST_cpp, 6},
+  {"_RMSTdepC_RMST_ENS_cpp", (DL_FUNC) &_RMSTdepC_RMST_ENS_cpp, 5},
+  {NULL, NULL, 0}
 };
 
-RcppExport void R_init_Rcpp2doParallel(DllInfo *dll) {
-    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
-    R_useDynamicSymbols(dll, FALSE);
+RcppExport void R_init_RMSTdepC(DllInfo *dll) {
+  R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+  R_useDynamicSymbols(dll, FALSE);
 }
