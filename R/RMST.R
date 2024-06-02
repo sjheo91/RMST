@@ -6,7 +6,7 @@
 #' @importFrom iterators icount
 #' @importFrom doParallel registerDoParallel
 
-RMST_var_cpp <- function(data, method, tau, theta, family, ensemble=False, tol=1e-6,
+RMST_var_cpp <- function(data, method, tau, theta, family, ensemble=False, weight=c(1,1,1), tol=1e-6,
                      n_boots = 999,
                      n_cores = parallel::detectCores()) {
   
