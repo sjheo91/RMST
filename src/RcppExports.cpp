@@ -90,9 +90,9 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type status(statusSEXP);
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type Sx(SxSEXP);
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type Sy(SySEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type family(familySEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type theta(thetaSEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type tol(tolSEXP);
+    Rcpp::traits::input_parameter< int >::type family(familySEXP);
+    Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
+    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
     
     rcpp_result_gen = Rcpp::wrap(SC_update_cpp(time, status, theta, Sx, Sy, family, theta, tol));
     return rcpp_result_gen;
@@ -107,9 +107,9 @@ BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type time(timeSEXP);
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type status(statusSEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type family(familySEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type theta(thetaSEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type tol(tolSEXP);
+    Rcpp::traits::input_parameter< int >::type family(familySEXP);
+    Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
+    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
     
     rcpp_result_gen = Rcpp::wrap(SC_copula_cpp(time, status, theta, family, theta, tol));
     return rcpp_result_gen;
