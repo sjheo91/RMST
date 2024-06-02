@@ -25,10 +25,10 @@ sort_by <- function(x, y) {
 #  .Call(`_Rcpp2doParallel_SC_copula_cpp`, time, status, family, theta, tol)
 #}
 #' @export
-RMST_cpp <- function(data, method, tau, theta, family) {
-    .Call(`_Rcpp2doParallel_RMST_cpp`, data, method, tau, theta, family)
-}
+#RMST_cpp <- function(data, method, tau, theta, family) {
+#    .Call(`_Rcpp2doParallel_RMST_cpp`, data, method, tau, theta, family)
+#}
 #' @export
-RMST_ENS_cpp <- function(data, method, tau, theta, family) {
-    .Call(`_Rcpp2doParallel_RMST_ENS_cpp`, data, method, tau, weight)
-}
+#RMST_ENS_cpp <- function(data, method, tau, theta, family) {
+#    .Call(`_Rcpp2doParallel_RMST_ENS_cpp`, data, method, tau, weight)
+#}
