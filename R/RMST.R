@@ -2,6 +2,8 @@
 #'
 #' @import survival
 #' @import dplyr
+#' @import VineCopula
+#' @import copula
 #' @importFrom foreach %dopar% foreach
 #' @importFrom iterators icount
 #' @importFrom doParallel registerDoParallel
