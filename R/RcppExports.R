@@ -21,22 +21,22 @@ sort_by <- function(x, y) {
     .Call(`_RMSTdepC_sort_by`, x, y)
 }
 
-SC_update_cpp <- function(time, status, Sx, Sy, family, theta, tol) {
+SC_update_cpp <- function(time, status, Sx, Sy, family, theta, tol=1e-6) {
   .Call(`_RMSTdepC_SC_update_cpp`, time, status, Sx, Sy, family, theta, tol)
 }
 
-SC_copula_cpp <- function(time, status, family, theta, tol) {
+SC_copula_cpp <- function(time, status, family, theta, tol=1e-6) {
   .Call(`_RMSTdepC_SC_copula_cpp`, time, status, family, theta, tol)
 }
 
-RMST_cpp <- function(data, method, tau, theta, family, tol) {
+RMST_cpp <- function(data, method, tau, theta, family, tol=1e-6) {
     .Call(`_RMSTdepC_RMST_cpp`, data, method, tau, theta, family, tol)
 }
 
-RMST_ENS_cpp <- function(data, method, tau, weight, tol) {
+RMST_ENS_cpp <- function(data, method, tau, weight, tol=1e-6) {
     .Call(`_RMSTdepC_RMST_ENS_cpp`, data, method, tau, weight, tol)
 }
 
-RMST_var_cpp <- function(data, method, tau, theta, family, n_boot, ensemble, weight, tol) {
+RMST_var_cpp <- function(data, method, tau, theta, family, n_boot=999, ensemble=F, weight=c(1,1,1), tol=1e-6) {
     .Call(`_RMSTdepC_RMST_var_cpp`, data, method, tau, theta, family, n_boot, ensemble, weight, tol)
 }
