@@ -31,8 +31,3 @@ RMST_var <- function(data, method, tau, theta, family, tol=1e-6,
   
   estimates
 }
-
-RMST <- function(data, method, tau, theta, family) {
-  RMST_cpp(boot_data, method, tau, theta, family)
-}
-
