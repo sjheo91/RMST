@@ -147,7 +147,7 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(RMST_ENS_cpp(data, method, tau, weight));
     return rcpp_result_gen;
 END_RCPP
-
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_Rcpp2doParallel_MCG_Clayton_cpp", (DL_FUNC) &_Rcpp2doParallel_MCG_Clayton_cpp, 3},
