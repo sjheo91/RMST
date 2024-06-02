@@ -1,3 +1,9 @@
+#' @export
+#'
+#' @import copula
+#' @import VineCopula
+#' @import dplyr
+
 time_gen <- function(n, dist, param){
   if(dist=='exp'){
     rexp(n, rate=param)
