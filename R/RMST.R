@@ -8,7 +8,7 @@
 #' @importFrom iterators icount
 #' @importFrom doParallel registerDoParallel
 
-RMST_var <- function(data, method, tau, theta=NULL, family=NULL, ensemble=FALSE, weight=c(1,1,1), tol=1e-6,
+RMST_var <- function(data, method, tau, theta=1, family=3, ensemble=FALSE, weight=c(1,1,1), tol=1e-6,
                      n_boots = 999,
                      n_cores = parallel::detectCores()) {
   
@@ -56,7 +56,7 @@ RMST_indep <- function(data, tau){
   return(list(rmst=rmst, rmst.var=rmst.var))
 }
 
-RMST_comparison <- function(data, tau, k_tau, family=NULL, method='indep', alpha=0.05, ensemble=F, weight=c(1,1,1), tol=1e-6, parallel=F,
+RMST_comparison <- function(data, tau, k_tau, family=3, method='indep', alpha=0.05, ensemble=F, weight=c(1,1,1), tol=1e-6, parallel=F,
                             n_boots = 999, n_cores = parallel::detectCores()){
   
   dat1 <- data %>% filter(trt==1)
