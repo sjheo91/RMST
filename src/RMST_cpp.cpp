@@ -1,12 +1,12 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-Function MCG_cpp( "MCG_cpp" ) ; 
-Function SC_copula_cpp( "SC_copula_cpp" ) ; 
-Function sort_by( "sort_by" ) ; 
-
 // [[Rcpp::export]]
 double RMST_cpp(DataFrame data, String method, double tau, double theta, int family) {
+
+  Function MCG_cpp( "MCG_cpp" ) ; 
+  Function SC_copula_cpp( "SC_copula_cpp" ) ; 
+  Function sort_by( "sort_by" ) ; 
   
   double rmst;
   DataFrame ft;
