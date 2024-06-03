@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-DataFrame MCG_cpp(NumericVector time, NumericVector status, double theta, int family) {
+DataFrame MCG_cpp(NumericVector time, NumericVector status, int family, double theta) {
 
   Function MCG_Clayton_cpp( "MCG_Clayton_cpp" ) ; 
   Function MCG_Gumbel_cpp( "MCG_Gumbel_cpp" ) ; 
