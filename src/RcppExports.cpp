@@ -145,7 +145,7 @@ RcppExport SEXP _RMSTdepC_RMST_ENS_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauS
   END_RCPP
 }
 // RMST_var_cpp
-double RMST_var_cpp(DataFrame data, String method, double tau, double theta, int family, int n_boots, bool ensemble, NumericVector weight, NumericVector weight, double tol);
+double RMST_var_cpp(DataFrame data, String method, double tau, double theta, int family, int n_boots, bool ensemble, NumericVector theta_vec, NumericVector weight, double tol);
 RcppExport SEXP _RMSTdepC_RMST_var_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP thetaSEXP, SEXP familySEXP, SEXP n_bootsSEXP, SEXP ensembleSEXP, SEXP theta_vecSEXP, SEXP weightSEXP, SEXP tolSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
