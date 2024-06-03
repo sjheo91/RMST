@@ -82,8 +82,8 @@ RMST_comparison <- function(data, tau, k_tau, family=3, method='indep', alpha=0.
     }
       
   }else if(method!='indep'&ensemble==T){
-    rmst1 <- RMST_ENS_cpp(data=dat1, tau=tau, method=method, weight=weight, tol=tol)
-    rmst0 <- RMST_ENS_cpp(data=dat0, tau=tau, method=method, weight=weight, tol=tol)
+    rmst1 <- RMST_ENS_cpp(data=dat1, tau=tau, method=method, theta_vec=theta_vec, weight=weight, tol=tol)
+    rmst0 <- RMST_ENS_cpp(data=dat0, tau=tau, method=method, theta_vec=theta_vec, weight=weight, tol=tol)
     
     if(parallel){
       rmst.var1 <- RMST_var(data=dat1, tau=tau, method=method, ensemble=T, theta_vec=theta_vec, weight=weight, tol=tol, n_boots=n_boots, n_cores=n_cores)
