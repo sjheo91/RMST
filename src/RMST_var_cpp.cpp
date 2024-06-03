@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-double RMST_var_cpp(DataFrame data, String method, double tau, double theta=1, int family=3, int n_boots=999, bool ensemble=false, NumericVector weight=NumericVector::create(), double tol=1e-6) {
+double RMST_var_cpp(DataFrame data, String method, double tau, double theta=1, int family=3, int n_boots=999, bool ensemble=false, NumericVector theta_vec={2.0/3.0,2.0,6.0} , NumericVector weight={1.0,1.0,1.0}, double tol=1e-6) {
   
   Function subset( "[.data.frame" );
   Function RMST_cpp( "RMST_cpp" );
@@ -22,9 +22,9 @@ double RMST_var_cpp(DataFrame data, String method, double tau, double theta=1, i
   
   for(int i = 0; i < n_boots; ++i){
     if(ensemble==false){
-      rmst = RMST_cpp(subset(data, ind(i,_), R_MissingArg), method, tau, theta, family, tol);
+      rmst = RMST_cpp(subset(data, ind(i,_), R_MissingArg), method, tau, family, theta, tol);
     }else{
-      rmst = RMST_ENS_cpp(subset(data, ind(i,_), R_MissingArg), method, tau, weight, tol);
+      rmst = RMST_ENS_cpp(subset(data, ind(i,_), R_MissingArg), method, tau, theta_vec, weight, tol);
     }
     rmst_vec[i] = rmst[0];
   }
