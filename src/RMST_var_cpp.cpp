@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-double RMST_var_cpp(DataFrame data, String method, double tau, double theta=1.0, int family=3, int n_boots=999, bool ensemble=false, NumericVector theta_vec , NumericVector weight, double tol=1e-6) {
+double RMST_var_cpp(DataFrame data, String method, double tau, double theta, int family, int n_boots=999, bool ensemble=false, NumericVector theta_vec , NumericVector weight, double tol=1e-6) {
   
   Function subset( "[.data.frame" );
   Function RMST_cpp( "RMST_cpp" );
