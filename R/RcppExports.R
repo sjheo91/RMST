@@ -14,7 +14,7 @@ MCG_Frank_cpp <- function(time, status, theta) {
 }
 
 MCG_cpp <- function(time, status, theta, family) {
-    .Call(`_RMSTdepC_MCG_cpp`, time, status, theta, family)
+    .Call(`_RMSTdepC_MCG_cpp`, time, status, family, theta)
 }
 
 sort_by <- function(x, y) {
@@ -30,13 +30,13 @@ SC_copula_cpp <- function(time, status, family, theta, tol=1e-6) {
 }
 
 RMST_cpp <- function(data, method, tau, theta, family, tol=1e-6) {
-    .Call(`_RMSTdepC_RMST_cpp`, data, method, tau, theta, family, tol)
+    .Call(`_RMSTdepC_RMST_cpp`, data, method, tau, family, theta, tol)
 }
 
-RMST_ENS_cpp <- function(data, method, tau, weight, tol=1e-6) {
-    .Call(`_RMSTdepC_RMST_ENS_cpp`, data, method, tau, weight, tol)
+RMST_ENS_cpp <- function(data, method, tau, theta_vec=c(2.0/3.0,2.0,6.0), weight=c(1,1,1), tol=1e-6) {
+    .Call(`_RMSTdepC_RMST_ENS_cpp`, data, method, tau, theta_vec, weight, tol)
 }
 
-RMST_var_cpp <- function(data, method, tau, theta=1, family=3, n_boots=999, ensemble=F, weight=c(1,1,1), tol=1e-6) {
-    .Call(`_RMSTdepC_RMST_var_cpp`, data, method, tau, theta, family, n_boots, ensemble, weight, tol)
+RMST_var_cpp <- function(data, method, tau, family=3, theta=1, n_boots=999, ensemble=F, theta_vec=c(2.0/3.0,2.0,6.0), weight=c(1,1,1), tol=1e-6) {
+    .Call(`_RMSTdepC_RMST_var_cpp`, data, method, tau, family, theta, n_boots, ensemble, theta_vec, weight, tol)
 }
