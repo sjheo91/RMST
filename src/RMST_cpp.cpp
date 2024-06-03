@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-double RMST_cpp(DataFrame data, String method, double tau, double theta, int family, double tol = 1e-6) {
+double RMST_cpp(DataFrame data, String method, double tau, int family, double theta, double tol = 1e-6) {
 
   Function MCG_cpp( "MCG_cpp" ) ; 
   Function SC_copula_cpp( "SC_copula_cpp" ) ; 
