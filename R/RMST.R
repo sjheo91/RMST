@@ -70,15 +70,15 @@ RMST_comparison <- function(data, tau, k_tau, family=3, method='indep', alpha=0.
     rmst0 <- rmst_res0$rmst
     rmst.var0 <- rmst_res0$rmst.var
   }else if(method!='indep'&ensemble==F){
-    rmst1 <- RMST_cpp(data=dat1, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol)
-    rmst0 <- RMST_cpp(data=dat0, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol)
+    rmst1 <- RMST_cpp(data=dat1, tau=tau, method=method, family=family, theta=BiCopTau2Par(family=family, tau=k_tau), tol=tol)
+    rmst0 <- RMST_cpp(data=dat0, tau=tau, method=method, family=family, theta=BiCopTau2Par(family=family, tau=k_tau), tol=tol)
 
     if(parallel){
-      rmst.var1 <- RMST_var(data=dat1, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol, n_boots=n_boots, n_cores=n_cores)
-      rmst.var0 <- RMST_var(data=dat0, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol, n_boots=n_boots, n_cores=n_cores)
+      rmst.var1 <- RMST_var(data=dat1, tau=tau, method=method, family=family, theta=BiCopTau2Par(family=family, tau=k_tau), tol=tol, n_boots=n_boots, n_cores=n_cores)
+      rmst.var0 <- RMST_var(data=dat0, tau=tau, method=method, family=family, theta=BiCopTau2Par(family=family, tau=k_tau), tol=tol, n_boots=n_boots, n_cores=n_cores)
     }else{
-      rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol, n_boots=n_boots)
-      rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, theta=BiCopTau2Par(family=family, tau=k_tau), family=family, tol=tol, n_boots=n_boots)
+      rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, family=family, theta=BiCopTau2Par(family=family, tau=k_tau), tol=tol, n_boots=n_boots)
+      rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, family=family, theta=BiCopTau2Par(family=family, tau=k_tau), tol=tol, n_boots=n_boots)
     }
       
   }else if(method!='indep'&ensemble==T){
