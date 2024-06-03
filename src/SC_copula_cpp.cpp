@@ -27,8 +27,11 @@ DataFrame SC_copula_cpp(NumericVector time, NumericVector status, int family, do
     Se = Se_new*1.0;
     Sc = Sc_new*1.0;
   }
+
+  NumericVector Se_ = Sc_new[Sc_new>=0];
+  Se_new = ifelse(Se_new<0, min(Se_), Se_new);
   
-  DataFrame output = DataFrame::create(Named("time") = time, Named("surv") = Se);
+  DataFrame output = DataFrame::create(Named("time") = time, Named("surv") = Se_new);
   
   return output;
 }
