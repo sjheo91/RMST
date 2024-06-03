@@ -56,7 +56,7 @@ RMST_indep <- function(data, tau){
   return(list(rmst=rmst, rmst.var=rmst.var))
 }
 
-RMST_comparison <- function(data, tau, k_tau, family=3, method='indep', alpha=0.05, ensemble=F, theta_vec=c(2/3,2,3), weight=c(1,1,1), tol=1e-6, parallel=F,
+RMST_comparison <- function(data, tau, k_tau, family=3, method='indep', alpha=0.05, ensemble=F, theta_vec=c(2/3,2,6), weight=c(1,1,1), tol=1e-6, parallel=F,
                             n_boots = 999, n_cores = parallel::detectCores()){
   
   dat1 <- data %>% filter(trt==1)
