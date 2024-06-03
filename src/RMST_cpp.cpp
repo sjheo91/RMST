@@ -27,7 +27,9 @@ double RMST_cpp(DataFrame data, String method, double tau, int family, double th
   
   NumericVector t_sub = t[t<tau];
   NumericVector s_sub = s[t<tau];
-  
+
+  s_sub = ifelse(s_sub<0, min(s_sub[s_sub>0]), s_sub);
+    
   t_sub.insert(t_sub.begin(), 0);
   t_sub.insert(t_sub.end(), tau);
   s_sub.insert(s_sub.begin(), 1);
