@@ -51,16 +51,16 @@ RcppExport SEXP _RMSTdepC_MCG_Frank_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP the
 }
 
 // MCG_cpp
-Rcpp::DataFrame MCG_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, double theta, int family);
-RcppExport SEXP _RMSTdepC_MCG_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP thetaSEXP, SEXP familySEXP) {
+Rcpp::DataFrame MCG_cpp(Rcpp::NumericVector time, Rcpp::NumericVector status, int family, double theta);
+RcppExport SEXP _RMSTdepC_MCG_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP familySEXP, SEXP thetaSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
   Rcpp::traits::input_parameter< Rcpp::NumericVector >::type time(timeSEXP);
   Rcpp::traits::input_parameter< Rcpp::NumericVector >::type status(statusSEXP);
-  Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
   Rcpp::traits::input_parameter< int >::type family(familySEXP);
-  rcpp_result_gen = Rcpp::wrap(MCG_cpp(time, status, theta, family));
+  Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
+  rcpp_result_gen = Rcpp::wrap(MCG_cpp(time, status, family, theta));
   return rcpp_result_gen;
   END_RCPP
 }
@@ -111,41 +111,42 @@ RcppExport SEXP _RMSTdepC_SC_copula_cpp(SEXP timeSEXP, SEXP statusSEXP, SEXP fam
   END_RCPP
 }
 // RMST_cpp
-double RMST_cpp(DataFrame data, String method, double tau, double theta, int family, double tol);
-RcppExport SEXP _RMSTdepC_RMST_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP thetaSEXP, SEXP familySEXP, SEXP tolSEXP) {
+double RMST_cpp(DataFrame data, String method, double tau, int family, double theta, double tol);
+RcppExport SEXP _RMSTdepC_RMST_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP familySEXP, SEXP thetaSEXP, SEXP tolSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
   Rcpp::traits::input_parameter< Rcpp::DataFrame >::type data(dataSEXP);
   Rcpp::traits::input_parameter< String >::type method(methodSEXP);
   Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
+  Rcpp::traits::input_parameter< int >::type family(familySEXP);  
   Rcpp::traits::input_parameter< double >::type theta(thetaSEXP);
-  Rcpp::traits::input_parameter< int >::type family(familySEXP);
   Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
   
-  rcpp_result_gen = Rcpp::wrap(RMST_cpp(data, method, tau, theta, family, tol));
+  rcpp_result_gen = Rcpp::wrap(RMST_cpp(data, method, tau, family, theta, tol));
   return rcpp_result_gen;
   END_RCPP
 }
 // RMST_ENS_cpp
-double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector weight, double tol);
-RcppExport SEXP _RMSTdepC_RMST_ENS_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP weightSEXP, SEXP tolSEXP) {
+double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector theta_vec, NumericVector weight, double tol);
+RcppExport SEXP _RMSTdepC_RMST_ENS_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP theta_vecSEXP, SEXP weightSEXP, SEXP tolSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
   Rcpp::traits::input_parameter< Rcpp::DataFrame >::type data(dataSEXP);
   Rcpp::traits::input_parameter< String >::type method(methodSEXP);
   Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
+  Rcpp::traits::input_parameter< NumericVector >::type theta_vec(theta_vecSEXP);
   Rcpp::traits::input_parameter< NumericVector >::type weight(weightSEXP);
   Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
   
-  rcpp_result_gen = Rcpp::wrap(RMST_ENS_cpp(data, method, tau, weight, tol));
+  rcpp_result_gen = Rcpp::wrap(RMST_ENS_cpp(data, method, tau, theta_vec, weight, tol));
   return rcpp_result_gen;
   END_RCPP
 }
 // RMST_var_cpp
-double RMST_var_cpp(DataFrame data, String method, double tau, double theta, int family, int n_boots, bool ensemble, NumericVector weight, double tol);
-RcppExport SEXP _RMSTdepC_RMST_var_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP thetaSEXP, SEXP familySEXP, SEXP n_bootsSEXP, SEXP ensembleSEXP, SEXP weightSEXP, SEXP tolSEXP) {
+double RMST_var_cpp(DataFrame data, String method, double tau, double theta, int family, int n_boots, bool ensemble, NumericVector weight, NumericVector weight, double tol);
+RcppExport SEXP _RMSTdepC_RMST_var_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauSEXP, SEXP thetaSEXP, SEXP familySEXP, SEXP n_bootsSEXP, SEXP ensembleSEXP, SEXP theta_vecSEXP, SEXP weightSEXP, SEXP tolSEXP) {
   BEGIN_RCPP
   Rcpp::RObject rcpp_result_gen;
   Rcpp::RNGScope rcpp_rngScope_gen;
@@ -156,10 +157,11 @@ RcppExport SEXP _RMSTdepC_RMST_var_cpp(SEXP dataSEXP, SEXP methodSEXP, SEXP tauS
   Rcpp::traits::input_parameter< int >::type family(familySEXP);
   Rcpp::traits::input_parameter< int >::type n_boots(n_bootsSEXP);
   Rcpp::traits::input_parameter< bool >::type ensemble(ensembleSEXP);
+  Rcpp::traits::input_parameter< NumericVector >::type theta_vec(theta_vecSEXP);
   Rcpp::traits::input_parameter< NumericVector >::type weight(weightSEXP);
   Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
   
-  rcpp_result_gen = Rcpp::wrap(RMST_var_cpp(data, method, tau, theta, family, n_boots, ensemble, weight, tol));
+  rcpp_result_gen = Rcpp::wrap(RMST_var_cpp(data, method, tau, theta, family, n_boots, ensemble, theta_vec, weight, tol));
   return rcpp_result_gen;
   END_RCPP
 }
@@ -173,8 +175,8 @@ static const R_CallMethodDef CallEntries[] = {
   {"_RMSTdepC_SC_update_cpp", (DL_FUNC) &_RMSTdepC_SC_update_cpp, 7},
   {"_RMSTdepC_SC_copula_cpp", (DL_FUNC) &_RMSTdepC_SC_copula_cpp, 5},
   {"_RMSTdepC_RMST_cpp", (DL_FUNC) &_RMSTdepC_RMST_cpp, 6},
-  {"_RMSTdepC_RMST_ENS_cpp", (DL_FUNC) &_RMSTdepC_RMST_ENS_cpp, 5},
-{"_RMSTdepC_RMST_var_cpp", (DL_FUNC) &_RMSTdepC_RMST_var_cpp, 9},
+  {"_RMSTdepC_RMST_ENS_cpp", (DL_FUNC) &_RMSTdepC_RMST_ENS_cpp, 6},
+{"_RMSTdepC_RMST_var_cpp", (DL_FUNC) &_RMSTdepC_RMST_var_cpp, 10},
   {NULL, NULL, 0}
 };
 
