@@ -13,7 +13,7 @@ MCG_Frank_cpp <- function(time, status, theta) {
     .Call(`_RMSTdepC_MCG_Frank_cpp`, time, status, theta)
 }
 
-MCG_cpp <- function(time, status, theta, family) {
+MCG_cpp <- function(time, status, family, theta) {
     .Call(`_RMSTdepC_MCG_cpp`, time, status, family, theta)
 }
 
@@ -29,7 +29,7 @@ SC_copula_cpp <- function(time, status, family, theta, tol=1e-6) {
   .Call(`_RMSTdepC_SC_copula_cpp`, time, status, family, theta, tol)
 }
 
-RMST_cpp <- function(data, method, tau, theta, family, tol=1e-6) {
+RMST_cpp <- function(data, method, tau, family, theta, tol=1e-6) {
     .Call(`_RMSTdepC_RMST_cpp`, data, method, tau, family, theta, tol)
 }
 
