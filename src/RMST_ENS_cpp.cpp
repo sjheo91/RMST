@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector theta_vec = {2.0/3.0, 2.0, 6.0}, NumericVector weight, double tol = 1e-6) {
+double RMST_ENS_cpp(DataFrame data, String method, double tau, NumericVector theta_vec, NumericVector weight, double tol = 1e-6) {
 
   Function RMST_cpp( "RMST_cpp" ) ; 
 
