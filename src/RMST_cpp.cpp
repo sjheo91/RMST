@@ -15,9 +15,9 @@ double RMST_cpp(DataFrame data, String method, double tau, int family, double th
   NumericVector status = sort_by(data["status"], data["time"]);
   
   if(method=="MCG"){
-    ft = MCG_cpp(time, status, theta, family);
+    ft = MCG_cpp(time, status, family, theta);
   }else if(method=="SC"){
-    ft = SC_copula_cpp(time, status, theta, family, tol);
+    ft = SC_copula_cpp(time, status, family, theta, tol);
   }else{
     stop("Check method");
   }
