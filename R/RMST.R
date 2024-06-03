@@ -8,7 +8,7 @@
 #' @importFrom iterators icount
 #' @importFrom doParallel registerDoParallel
 
-RMST_var <- function(data, method, tau, theta=1, family=3, ensemble=FALSE, weight=c(1,1,1), tol=1e-6,
+RMST_var <- function(data, method, tau, theta=1, family=3, ensemble=FALSE, theta_vec=c(2/3,2,6), weight=c(1,1,1), tol=1e-6,
                      n_boots = 999,
                      n_cores = parallel::detectCores()) {
   
@@ -27,9 +27,9 @@ RMST_var <- function(data, method, tau, theta=1, family=3, ensemble=FALSE, weigh
                                 .packages = "RMSTdepC") %dopar% {
     boot_data = data[sample(1:nrow(data), replace=T),]
     if(ensemble==FALSE){
-      result = RMST_cpp(boot_data, method, tau, theta, family, tol);
+      result = RMST_cpp(boot_data, method, family, tau, theta, tol);
     }else{
-      result = RMST_ENS_cpp(boot_data, method, tau, weight, tol);
+      result = RMST_ENS_cpp(boot_data, method, tau, theta_vec, weight, tol);
     }
     result;
   }
@@ -56,7 +56,7 @@ RMST_indep <- function(data, tau){
   return(list(rmst=rmst, rmst.var=rmst.var))
 }
 
-RMST_comparison <- function(data, tau, k_tau, family=3, method='indep', alpha=0.05, ensemble=F, weight=c(1,1,1), tol=1e-6, parallel=F,
+RMST_comparison <- function(data, tau, k_tau, family=3, method='indep', alpha=0.05, ensemble=F, theta_vec=c(2/3,2,3), weight=c(1,1,1), tol=1e-6, parallel=F,
                             n_boots = 999, n_cores = parallel::detectCores()){
   
   dat1 <- data %>% filter(trt==1)
@@ -86,11 +86,11 @@ RMST_comparison <- function(data, tau, k_tau, family=3, method='indep', alpha=0.
     rmst0 <- RMST_ENS_cpp(data=dat0, tau=tau, method=method, weight=weight, tol=tol)
     
     if(parallel){
-      rmst.var1 <- RMST_var(data=dat1, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots, n_cores=n_cores)
-      rmst.var0 <- RMST_var(data=dat0, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots, n_cores=n_cores)
+      rmst.var1 <- RMST_var(data=dat1, tau=tau, method=method, ensemble=T, theta_vec, weight=weight, tol=tol, n_boots=n_boots, n_cores=n_cores)
+      rmst.var0 <- RMST_var(data=dat0, tau=tau, method=method, ensemble=T, theta_vec, weight=weight, tol=tol, n_boots=n_boots, n_cores=n_cores)
     }else{
-      rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots)
-      rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, ensemble=T, weight=weight, tol=tol, n_boots=n_boots)
+      rmst.var1 <- RMST_var_cpp(data=dat1, tau=tau, method=method, ensemble=T, theta_vec, weight=weight, tol=tol, n_boots=n_boots)
+      rmst.var0 <- RMST_var_cpp(data=dat0, tau=tau, method=method, ensemble=T, theta_vec, weight=weight, tol=tol, n_boots=n_boots)
     }
 
   }else{
